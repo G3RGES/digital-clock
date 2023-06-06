@@ -37,14 +37,25 @@
         let current = new Date();
 
         //12 HOURS FORMAT
-        hrs.innerHTML = current.getHours() - 12;
-
+        // hrs.innerHTML =
+        //   (current.getHours() - "12" < 10 ? "0" : "") +
+        //   (current.getHours() % 12);
+        if (current.getHours() == "0") {
+          hrs.innerHTML = "12";
+        } else {
+          hrs.innerHTML =
+            (current.getHours() - "12" < 10 ? "0" : "") +
+            (current.getHours() % 12);
+        }
         // 24 HOURS FORMAT
-        // hrs.innerHTML = current.getHours();
+        // hrs.innerHTML =
+        //   (current.getHours() < 10 ? "0" : "") + current.getHours();
 
-        min.innerHTML = current.getMinutes();
+        min.innerHTML =
+          (current.getMinutes() < 10 ? "0" : "") + current.getMinutes();
 
-        sec.innerHTML = current.getSeconds();
+        sec.innerHTML =
+          (current.getSeconds() < 10 ? "0" : "") + current.getSeconds();
       }, 1000);
     </script>
   </body>
